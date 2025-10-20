@@ -4,9 +4,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
           <Link to="/">
-              <p className='text-2xl font-bold text-gradient'>
+              <h6 className='text-2xl font-bold text-gradient'>
                   SynchHire
-              </p>
+              </h6>
           </Link>
           <Link to="/upload" className='primary-button w-fit'>
               Upload Resume
