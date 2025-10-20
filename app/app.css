@@ -1,170 +1,299 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
 @import "tailwindcss";
+
 @import "tw-animate-css";
 
+
+
 @theme {
-    --font-sans:
-        "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --color-dark-200: #344054;
-    --color-light-blue-100: #e0f2fe;
-    --color-light-blue-200: #bae6fd;
-    --color-badge-green: #ecfdf3;
-    --color-badge-red: #fef2f2;
-    --color-badge-yellow: #fffdf5;
-    --color-badge-green-text: #065f46;
-    --color-badge-red-text: #991b1b;
-    --color-badge-yellow-text: #92400e;
+
+  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
+
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-dark-200: #344054;
+
+  --color-light-blue-100: #e0f2fe;
+
+  --color-light-blue-200: #bae6fd;
+
+  --color-badge-green: #ecfdf3;
+
+  --color-badge-red: #fef2f2;
+
+  --color-badge-yellow: #fffdf5;
+
+  --color-badge-green-text: #065f46;
+
+  --color-badge-red-text: #991b1b;
+
+  --color-badge-yellow-text: #92400e;
+
 }
+
+
 
 html,
+
 body {
-    @apply bg-gray-50;
+
+  @apply bg-gray-50;
+
 }
+
+
 
 main {
-    @apply min-h-screen pt-10;
+
+  @apply min-h-screen pt-10;
+
 }
+
+h1 {
+
+  @apply text-6xl  text-gradient leading-tight tracking-[-2px] font-semibold;
+
+}
+
+
 
 h2 {
-    @apply text-4xl text-gradient leading-tight tracking-[-2px] font-semibold;
+
+  @apply text-3xl text-dark-200;
+
 }
 
-h3 {
-    @apply text-3xl text-dark-200;
-}
-h4 {
-    @apply text-2xl text-dark-200;
-}
-p {
-    @apply text-lg text-white leading-tight tracking-[-1px];
-}
+
 
 label {
-    @apply text-dark-200;
+
+  @apply text-dark-200;
+
 }
 
 input {
-    @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+
+  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+
 }
+
+
 
 textarea {
-    @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+
+  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+
 }
+
+
 
 form {
-    @apply flex flex-col items-start gap-8 w-full;
+
+  @apply flex flex-col items-start gap-8 w-full;
+
 }
+
+
 
 @layer components {
-    .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#444C9C] via-[#000000] to-[#73C0B1];
+
+  .text-gradient {
+
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#444C9C] via-[#000000] to-[#73C0B1];
+
+  }
+
+  .gradient-border {
+
+    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
+
+  }
+
+  .primary-button {
+
+    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
+
+  }
+
+  .resume-nav {
+
+    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
+
+  }
+
+  .resume-summary {
+
+    @apply flex flex-row items-center justify-center p-4 gap-4;
+
+    .category {
+
+      @apply flex flex-row gap-2 items-center bg-white rounded-2xl p-4 w-full justify-between;
+
     }
 
-    .gradient-border {
-        @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
-    }
+  }
 
-    .primary-button {
-        @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
-    }
+  .back-button {
 
-    .resume-nav {
-        @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
-    }
+    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
 
-    .resume-summary {
-        @apply flex flex-row items-center justify-center p-4 gap-4;
-    }
+  }
 
-    .resume-summary .category {
-        @apply flex flex-row gap-2 items-center bg-white rounded-2xl p-4 w-full justify-between;
-    }
+  .auth-button {
 
-    .back-button {
-        @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
-    }
+    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
 
-    .auth-button {
-        @apply primary-gradient rounded-full py-3 px-8 cursor-pointer w-[600px] max-md:w-full text-2xl font-semibold text-white;
-    }
+  }
 
-    .main-section {
-        @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
-    }
+  .main-section {
 
-    .page-heading {
-        @apply flex flex-col items-center gap-8 max-w-4xl text-center;
-    }
+    @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
 
-    .resumes-section {
-        @apply flex flex-wrap max-lg:flex-col gap-6 items-start w-full max-w-[1850px] justify-evenly;
-    }
+  }
 
-    .resume-card {
-        @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
-    }
+  .page-heading {
 
-    .resume-card-header {
-        @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
-    }
+    @apply flex flex-col items-center gap-8 max-w-4xl text-center;
 
-    .feedback-section {
-        @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
-    }
+  }
 
-    .navbar {
-        @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
-    }
+  .resumes-section {
 
-    .score-badge {
-        @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
-    }
+    @apply flex flex-wrap max-lg:flex-col gap-6 items-start  w-full max-w-[1850px] justify-evenly;
 
-    .form-div {
-        @apply flex flex-col gap-2 w-full items-start;
-    }
+  }
 
-    .uplader-drag-area {
-        @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
-    }
 
-    .uploader-selected-file {
-        @apply flex items-center justify-between p-3 bg-gray-100 rounded-2xl;
-    }
+
+  .resume-card {
+
+    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
+
+  }
+
+
+
+  .resume-card-header {
+
+    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
+
+  }
+
+
+
+  .feedback-section {
+
+    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+
+  }
+
+
+
+  .navbar {
+
+    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+
+  }
+
+
+
+  .score-badge {
+
+    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
+
+  }
+
+
+
+  .form-div {
+
+    @apply flex flex-col gap-2 w-full items-start;
+
+  }
+
+
+
+  .uplader-drag-area {
+
+    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
+
+  }
+
+  .uploader-selected-file {
+
+    @apply flex items-center justify-between p-3 bg-gray-100 rounded-2xl;
+
+  }
+
 }
+
+
 
 @utility bg-gradient {
-    background: linear-gradient(to bottom, #ffffff 60%, #ffe4e6);
+
+  background: linear-gradient(to bottom, #ffffff 60%, #ffe4e6);
+
 }
+
+
 
 @utility text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#444C9C] via-[#000000] to-[#73C0B1];
+
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#444C9C] via-[#000000] to-[#73C0B1];
+
 }
+
+
 
 @utility gradient-hover {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+
+  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+
 }
+
+
 
 @utility primary-gradient {
-    background: linear-gradient(to bottom, #4f46e5, #3730a3);
-    box-shadow: 0px 74px 21px 0px #4f46e500;
+
+  background: linear-gradient(to bottom, #4f46e5, #3730a3);
+
+  box-shadow: 0px 74px 21px 0px #4f46e500;
+
 }
+
+
 
 @utility primary-gradient-hover {
-    background: linear-gradient(to bottom, #4338ca, #312e81);
+
+  background: linear-gradient(to bottom, #4338ca, #312e81);
+
 }
+
+
 
 @utility inset-shadow {
-    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
+
+  box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.05);
+
+  backdrop-filter: blur(10px);
+
 }
 
+
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
 }
