@@ -103,7 +103,7 @@ const upload = () => {
             await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
             setStatusText("Analysis complete! Redirecting...");
-            console.log("Final data:", data);
+
 
             navigate(`/resume/${uuid}`);
         } catch (err) {
