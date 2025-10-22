@@ -1,4 +1,3 @@
-import { prepareInstructions } from "../../constants/index";
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router";
 import FileUploader from "~/components/FileUploader";
@@ -6,6 +5,7 @@ import Navbar from "~/components/Navbar";
 import { convertPdfToImage } from "~/lib/pdf2img";
 import { usePuterStore } from "~/lib/puter";
 import { generateUUID } from "~/lib/utils";
+import { prepareInstructions } from "../../constants/index";
 
 const upload = () => {
     const { auth, isLoading, fs, ai, kv } = usePuterStore();
@@ -17,7 +17,6 @@ const upload = () => {
     const handleFileSelect = (file: File | null) => {
         setFile(file);
     };
-
 
     const handleAnalyzer = async ({
         companyName,
@@ -106,17 +105,13 @@ const upload = () => {
             setStatusText("Analysis complete! Redirecting...");
             console.log("Final data:", data);
 
-            // Optional navigation
-            // navigate(`/result/${uuid}`);
+            navigate(`/resume/${uuid}`);
         } catch (err) {
             console.error("Error in analyzer:", err);
             setStatusText("Something went wrong while processing your resume.");
             setIsProcessing(false);
         }
     };
-
-
-
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
