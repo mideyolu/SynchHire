@@ -10,6 +10,9 @@
  * formatSize(1024 * 300) -> "300 KB"
  * formatSize(1024 * 1024 * 2.3) -> "2.3 MB"
  */
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function formatSize(bytes: number): string {
     const KB = 1024;
@@ -33,3 +36,7 @@ export function formatSize(bytes: number): string {
 export default formatSize;
 
 export const generateUUID = () => crypto.randomUUID();
+
+export function cn(inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}

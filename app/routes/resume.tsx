@@ -56,7 +56,7 @@ const resume = () => {
     return (
         <main className="!pt-0">
             <nav className="resume-nav">
-                <Link to="/home" className="back-button">
+                <Link to="/" className="back-button">
                     <img
                         src="/icons/back.svg"
                         alt="logo"
